@@ -17,9 +17,9 @@ tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
 while True:
-        print 'Zoeken naar verbinding'
+        print 'Wachten'
         tcpCliSock,addr = tcpSerSock.accept()
-        print 'Verbonden'
+        print 'Bezig'
         try:
                 while True:
                         data = ''
