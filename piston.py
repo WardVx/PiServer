@@ -9,13 +9,14 @@ def setup():
         servo.start(2.5)
         servo.ChangeDutyCycle(2.5)
         #start pwm with Duty Cycle is 2% --> Pluse with = 2%*20ms = 0.4ms
-#Create PWM on pin 11 with frequency 50Hz --> period 20ms
+        #Create PWM on pin 11 with frequency 50Hz --> period 20ms
 def ServoUp():
         global cur_X
         cur_X = 10
         if cur_X <10:
                 cur_X = 10
         servo.ChangeDutyCycle(cur_X)
+        #servo.ChangeDutyCycle(0)
         time.sleep(1)
 def ServoDown():
         global cur_X
@@ -23,6 +24,7 @@ def ServoDown():
         if cur_X <-10:
                 cur_X = -10
         servo.ChangeDutyCycle(cur_X)
+        #servo.ChangeDutyCycle(10)
         time.sleep(1)
 def close():
         servo.stop()
