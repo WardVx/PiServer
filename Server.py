@@ -1,9 +1,9 @@
-import piston
+import Piston
 from socket import *
 from time import ctime
 import RPi.GPIO as GPIO
 
-piston.setup()
+Piston.setup()
 
 ctrCmd = ['Up','Down']
 
@@ -27,12 +27,12 @@ while True:
                         if not data:
                                 break
                         if data == ctrCmd[0]:
-                                piston.ServoUp()
+                                Piston.ServoUp()
                                 print 'Gaat naar boven'
                         if data == ctrCmd[1]:
-                                piston.ServoDown()
+                                Piston.ServoDown()
                                 print 'Gaat naar beneden'
         except KeyboardInterrupt:
-                piston.close()
+                Piston.close()
                 GPIO.cleanup()
 tcpSerSock.close();
