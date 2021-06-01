@@ -9,11 +9,11 @@ def setup():
         global PistonD
         
         PistonU=GPIO.PWM(16,50)
-        #Piston omhoog staat hier als poort 11
+        #Piston omhoog staat hier als poort 16
         #Poort 14 is GROUND
         
         PistonD=GPIO.PWM(18,50)
-        #Piston omlaag staat hier als poort 12
+        #Piston omlaag staat hier als poort 18
         #Poort 20 is GROUND
 
 def PistonUp():
