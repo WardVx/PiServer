@@ -44,6 +44,7 @@ while True:
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
                                 break
+                                print ctrCmd
                         if data == ctrCmd[0]:
                                 print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
