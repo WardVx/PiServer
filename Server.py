@@ -6,7 +6,7 @@ from time import ctime
 import time
 import RPi.GPIO as GPIO
 
-timestamp = 1545730073
+ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston2.setup()
 
