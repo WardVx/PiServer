@@ -5,7 +5,7 @@ from time import ctime
 import RPi.GPIO as GPIO
 
 timestamp = 1545730073
-dt_object = datetime.fromtimestamp(timestamp)
+st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston2.setup()
 
 ctrCmd = ['Up','Down']
@@ -19,23 +19,28 @@ tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
+clear
+print(st, "Server Loaded!")
+print(" ")
+
 while True:
-        print(dt_object, " : Wachten")
+        print(st, " : Wachten")
         tcpCliSock,addr = tcpSerSock.accept()
-        print(dt_object, " : Bezig")
+        print(st, " : Bezig")
         try:
                 while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
+                                print(st, " : Niets ontvangen")
                                 break
                         if data == ctrCmd[0]:
-                                print(dt_object, " : Gaat naar boven")
+                                print(st, " : Gaat naar boven")
                                 Piston2.PistonUp()
                                 
                                 
                         if data == ctrCmd[1]:
-                                print(dt_object, " : Gaat naar beneden")
+                                print(st, " : Gaat naar beneden")
                                 Piston2.PistonDown()
                                 
                                 
