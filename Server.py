@@ -49,8 +49,8 @@ while True:
                         data = tcpCliSock.recv(BUFSIZE)
                         
                         if not data:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE)                              
+                                #sys.stdout.write(CURSOR_UP_ONE)
+                                #sys.stdout.write(ERASE_LINE)                              
                                 break
                                 
                         if data == ctrCmd[0]:
