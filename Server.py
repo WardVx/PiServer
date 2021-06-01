@@ -1,5 +1,6 @@
 import Piston2
 from socket import *
+
 from time import ctime
 import RPi.GPIO as GPIO
 
@@ -29,11 +30,11 @@ while True:
                         if data == ctrCmd[0]:
                                 Piston2.PistonUp()
                                 print 'Gaat naar boven'
-                                time.sleep(2)
+                                
                         if data == ctrCmd[1]:
                                 Piston2.PistonDown()
                                 print 'Gaat naar beneden'
-                                time.sleep(2)
+                                
         except KeyboardInterrupt:
                 Piston2.close()
                 GPIO.cleanup()
