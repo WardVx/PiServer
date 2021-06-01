@@ -41,16 +41,16 @@ print st, ' : Server geladen!'
 while True:
         print st, ' : Wachten...', '\r'
         tcpCliSock,addr = tcpSerSock.accept()
-        #sys.stdout.write(CURSOR_UP_ONE)
-        #sys.stdout.write(ERASE_LINE)   
+        sys.stdout.write(CURSOR_UP_ONE)
+        sys.stdout.write(ERASE_LINE)   
         try:
                 while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         
                         if not data:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE)                              
+                                #sys.stdout.write(CURSOR_UP_ONE)
+                                #sys.stdout.write(ERASE_LINE)                              
                                 break
                                 
                         if data == ctrCmd[0]:
