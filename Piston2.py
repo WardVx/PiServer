@@ -17,6 +17,6 @@ def PistonDown():
   GPIO.output(24,GPIO.LOW)
   
 def close():
-  piston.stop
+  piston2.stop
 if __name__ == '__main__':
   setup()
