@@ -41,8 +41,8 @@ print st, ' : Server geladen!'
 while True:
         print st, ' : Wachten...', '\r'
         tcpCliSock,addr = tcpSerSock.accept()
-        sys.stdout.write(CURSOR_UP_ONE)
-        sys.stdout.write(ERASE_LINE)   
+        #sys.stdout.write(CURSOR_UP_ONE)
+        #sys.stdout.write(ERASE_LINE)   
         try:
                 while True:
                         data = ''
