@@ -37,9 +37,10 @@ print('                                         __/ |          ')
 print('                                        |___/           ')
 print '\n'
 print st, ' : Server geladen!'
+print st, ' : Wachten...'
 
 while True:
-        print st, ' : Wachten...'
+        #print st, ' : Wachten...'
         tcpCliSock,addr = tcpSerSock.accept()
         #sys.stdout.write(CURSOR_UP_ONE)
         #sys.stdout.write(ERASE_LINE)   
@@ -58,6 +59,7 @@ while True:
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
+                                print st, ' : Wachten...'
                                 
                                 
                         if data == ctrCmd[1]:
@@ -65,7 +67,7 @@ while True:
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
-                                
+                                print st, ' : Wachten...'
                                 
         except KeyboardInterrupt:
                 Piston2.close()
