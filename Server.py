@@ -1,9 +1,11 @@
 import Piston2
 from socket import *
-
+from datetime import datetime
 from time import ctime
 import RPi.GPIO as GPIO
 
+timestamp = 1545730073
+dt_object = datetime.fromtimestamp(timestamp)
 Piston2.setup()
 
 ctrCmd = ['Up','Down']
@@ -28,12 +30,14 @@ while True:
                         if not data:
                                 break
                         if data == ctrCmd[0]:
+                                print(dt_object, ' : Gaat naar boven')
                                 Piston2.PistonUp()
-                                print 'Gaat naar boven'
+                                
                                 
                         if data == ctrCmd[1]:
+                                print(dt_object, ' : Gaat naar beneden')
                                 Piston2.PistonDown()
-                                print 'Gaat naar beneden'
+                                
                                 
         except KeyboardInterrupt:
                 Piston2.close()
