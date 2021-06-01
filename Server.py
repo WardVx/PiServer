@@ -23,27 +23,27 @@ tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
-print(st, "Server Loaded!")
-print(" ")
+print st, 'Server Loaded!'
+print '/n'
 
 while True:
-        print(st, " : Wachten")
+        print st, ' : Wachten'
         tcpCliSock,addr = tcpSerSock.accept()
-        print(st, " : Bezig")
+        print st, ' : Bezig'
         try:
                 while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
-                                print(st, " : Niets ontvangen")
+                                print st, ' : Niets ontvangen'
                                 break
                         if data == ctrCmd[0]:
-                                print(st, " : Gaat naar boven")
+                                print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
                                 
                                 
                         if data == ctrCmd[1]:
-                                print(st, " : Gaat naar beneden")
+                                print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 
                                 
