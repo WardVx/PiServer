@@ -49,20 +49,20 @@ while True:
                         data = tcpCliSock.recv(BUFSIZE)
                         
                         if not data:
-                                #sys.stdout.write(CURSOR_UP_ONE)
-                                #sys.stdout.write(ERASE_LINE)                              
+                                sys.stdout.write(CURSOR_UP_ONE)
+                                sys.stdout.write(ERASE_LINE)                              
                                 break
                                 
                         if data == ctrCmd[0]:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE) 
+                                #sys.stdout.write(CURSOR_UP_ONE)
+                                #sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
                                 
                                 
                         if data == ctrCmd[1]:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE) 
+                                #sys.stdout.write(CURSOR_UP_ONE)
+                                #sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 
