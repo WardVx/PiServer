@@ -39,7 +39,7 @@ print '\n'
 print st, ' : Server geladen!'
 
 while True:
-        print st, ' : Wachten...', '\r'
+        print st, ' : Wachten...'
         tcpCliSock,addr = tcpSerSock.accept()
         #sys.stdout.write(CURSOR_UP_ONE)
         #sys.stdout.write(ERASE_LINE)   
