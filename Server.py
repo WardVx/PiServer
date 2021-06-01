@@ -5,8 +5,12 @@ import datetime
 from time import ctime
 import time
 import RPi.GPIO as GPIO
+import sys
 
 GPIO.setwarnings(False) 
+
+CURSOR_UP_ONE = '\x1b[1A' 
+ERASE_LINE = '\x1b[2K' 
 
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
@@ -35,7 +39,7 @@ print '\n'
 print st, ' : Server geladen!'
 
 while True:
-        #print st, ' : Wachten...', '\b'
+        print st, ' : Wachten...', '\r'
         tcpCliSock,addr = tcpSerSock.accept()
 
         try:
@@ -46,11 +50,15 @@ while True:
                                 break
                                 print ctrCmd
                         if data == ctrCmd[0]:
+                                sys.stdout.write(CURSOR_UP_ONE)
+                                sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
                                 
                                 
                         if data == ctrCmd[1]:
+                                sys.stdout.write(CURSOR_UP_ONE)
+                                sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 
