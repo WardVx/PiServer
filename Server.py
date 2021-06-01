@@ -35,7 +35,7 @@ print '\n'
 print st, ' : Server geladen!'
 
 while True:
-        print st, ' : Wachten...', '\b'
+        #print st, ' : Wachten...', '\b'
         tcpCliSock,addr = tcpSerSock.accept()
 
         try:
