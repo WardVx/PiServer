@@ -3,17 +3,18 @@ import time
 
 def setup():
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(11,GPIO.OUT)
+        GPIO.setup(16,GPIO.OUT)
+        GPIO.setup(18,GPIO.OUT)
         global PistonU
         global PistonD
         
-        PistonU=GPIO.PWM(11,50)
+        PistonU=GPIO.PWM(16,50)
         #Piston omhoog staat hier als poort 11
-        #Poort 9 is GROUND
+        #Poort 14 is GROUND
         
-        PistonD=GPIO.PWM(12,50)
+        PistonD=GPIO.PWM(18,50)
         #Piston omlaag staat hier als poort 12
-        #Poort 9 is GROUND
+        #Poort 20 is GROUND
 
 def PistonUp():
         PistonU.ChangeDutyCycle(10)
