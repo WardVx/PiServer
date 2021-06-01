@@ -27,11 +27,11 @@ while True:
                         if not data:
                                 break
                         if data == ctrCmd[0]:
-                                Piston2.ServoUp()
+                                Piston2.PistonUp()
                                 print 'Gaat naar boven'
                                 time.sleep(2)
                         if data == ctrCmd[1]:
-                                Piston2.ServoDown()
+                                Piston2.PistonDown()
                                 print 'Gaat naar beneden'
                                 time.sleep(2)
         except KeyboardInterrupt:
