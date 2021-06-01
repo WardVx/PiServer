@@ -7,14 +7,14 @@ def setup():
   GPIO.setup(24,GPIO.LOW)
 
 def PistonUp():
-  GPIO.output(23, GPIO.HIGH)
+  GPIO.output(23,GPIO.HIGH)
   time.sleep(2)
-  GPIO.output(23, GPIO.LOW)
+  GPIO.output(23,GPIO.LOW)
 
 def PistonDown():
-  GPIO.output(24, GPIO.HIGH)
+  GPIO.output(24,GPIO.HIGH)
   time.sleep(2)
-  GPIO.output(24, GPIO.LOW)
+  GPIO.output(24,GPIO.LOW)
   
 def close():
   piston.stop
