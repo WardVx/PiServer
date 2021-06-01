@@ -47,8 +47,6 @@ while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
-                                print ctrCmd
-                                print st, ' : Error! Geen data ontvangen!'
                                 break
                         if data == ctrCmd[0]:
                                 sys.stdout.write(CURSOR_UP_ONE)
@@ -63,6 +61,8 @@ while True:
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 
+                        if data == ''
+                                print 'Null'
                                 
         except KeyboardInterrupt:
                 Piston2.close()
