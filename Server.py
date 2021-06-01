@@ -22,8 +22,19 @@ ADDR = (HOST,PORT)
 tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
-
-print st, 'Server Loaded!'
+print '\n'
+print 
+print ______ _      _       _                       ______ _ 
+print |  ___(_)    | |     | |                      | ___ (_)
+print | |_   _  ___| |_ ___| |__  _ __ _   _  __ _  | |_/ /_ 
+print |  _| | |/ _ \ __/ __| '_ \| '__| | | |/ _` | |  __/| |
+print | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |
+print \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|
+print                                         __/ |          
+print                                        |___/           
+print 
+print '\n'
+print st, 'Server geladen!'
 print '\n'
 
 while True:
@@ -35,8 +46,6 @@ while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
-                                
-                                print st, ' : ####### Niets ontvangen! #######'
                                 break
                         if data == ctrCmd[0]:
                                 print st, ' : Gaat naar boven'
