@@ -24,18 +24,19 @@ tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
 print st, 'Server Loaded!'
-print '/n'
+print '\n'
 
 while True:
-        print st, ' : Wachten'
+        print st, ' : Wachten', end="\r"
         tcpCliSock,addr = tcpSerSock.accept()
-        print st, ' : Bezig'
+
         try:
                 while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
-                                print st, ' : Niets ontvangen'
+                                
+                                print st, ' : ####### Niets ontvangen! #######'
                                 break
                         if data == ctrCmd[0]:
                                 print st, ' : Gaat naar boven'
