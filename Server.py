@@ -32,7 +32,7 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('                                        |___/           ')
 print '\n'
-print st, 'Server geladen!'
+print st, ' : Server geladen!'
 print '\n'
 
 while True:
