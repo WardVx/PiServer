@@ -21,7 +21,6 @@ tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
-clear
 print(st, "Server Loaded!")
 print(" ")
 
