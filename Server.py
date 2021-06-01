@@ -47,6 +47,9 @@ while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
                         if not data:
+                                sys.stdout.write(CURSOR_UP_ONE) 
+                                sys.stdout.write(ERASE_LINE)
+                                print st, ' : Error! Geen data ontvangen!'
                                 break
                                 print ctrCmd
                         if data == ctrCmd[0]:
