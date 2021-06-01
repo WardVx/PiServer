@@ -20,9 +20,9 @@ tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
 while True:
-        print 'Wachten'
+        print(dt_object, " : Wachten")
         tcpCliSock,addr = tcpSerSock.accept()
-        print 'Bezig'
+        print(dt_object, " : Bezig")
         try:
                 while True:
                         data = ''
@@ -30,12 +30,12 @@ while True:
                         if not data:
                                 break
                         if data == ctrCmd[0]:
-                                print(dt_object, ' : Gaat naar boven')
+                                print(dt_object, " : Gaat naar boven")
                                 Piston2.PistonUp()
                                 
                                 
                         if data == ctrCmd[1]:
-                                print(dt_object, ' : Gaat naar beneden')
+                                print(dt_object, " : Gaat naar beneden")
                                 Piston2.PistonDown()
                                 
                                 
