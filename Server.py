@@ -61,8 +61,6 @@ while True:
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 
-                        if data == ''
-                                print 'Null'
                                 
         except KeyboardInterrupt:
                 Piston2.close()
