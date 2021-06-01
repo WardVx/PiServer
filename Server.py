@@ -29,9 +29,11 @@ while True:
                         if data == ctrCmd[0]:
                                 Piston.ServoUp()
                                 print 'Gaat naar boven'
+                                time.sleep(2)
                         if data == ctrCmd[1]:
                                 Piston.ServoDown()
                                 print 'Gaat naar beneden'
+                                time.sleep(2)
         except KeyboardInterrupt:
                 Piston.close()
                 GPIO.cleanup()
