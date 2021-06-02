@@ -1,5 +1,6 @@
 import Piston2
-from socket import *
+import socket
+#from socket import *
 from datetime import datetime
 import datetime
 from time import ctime
@@ -8,25 +9,21 @@ import RPi.GPIO as GPIO
 import sys
 
 GPIO.setwarnings(False) 
-
 CURSOR_UP_ONE = '\x1b[1A' 
 ERASE_LINE = '\x1b[2K' 
-
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston2.setup()
-
 ctrCmd = ['Up','Down']
-
 HOST = ''
 PORT = 21567
 SERVER = socket.gethostbyname(socket.gethostname())
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
-
 tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
+
 print '\n'
 print(' ______ _      _       _                       ______ _ ')
 print(' |  ___(_)    | |     | |                      | ___ (_)')
@@ -40,37 +37,26 @@ print '\n'
 print st, ' : Server Info : Server geladen!'
 print st, ' : Server info : Server IP : ', SERVER, PORT
 print st, ' : Wachten...'
-
 while True:
-        #print st, ' : Wachten...'
-        tcpCliSock,addr = tcpSerSock.accept()
-        #sys.stdout.write(CURSOR_UP_ONE)
-        #sys.stdout.write(ERASE_LINE)   
+        tcpCliSock,addr = tcpSerSock.accept()  
         try:
                 while True:
                         data = ''
                         data = tcpCliSock.recv(BUFSIZE)
-                        
-                        if not data:
-                                #sys.stdout.write(CURSOR_UP_ONE)
-                                #sys.stdout.write(ERASE_LINE)                              
+                        if not data:                            
                                 break
-                                
                         if data == ctrCmd[0]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar boven'
                                 Piston2.PistonUp()
                                 print st, ' : Wachten...'
-                                
-                                
                         if data == ctrCmd[1]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ' : Gaat naar beneden'
                                 Piston2.PistonDown()
                                 print st, ' : Wachten...'
-                                
         except KeyboardInterrupt:
                 Piston2.close()
                 GPIO.cleanup()
