@@ -34,9 +34,9 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('      Ward Vandevyvere                  |___/           ')
 print '\n'
-print st, ' : Server Info : Server geladen!'
-print st, ' : Server Info : Server IP : ', GetMyIP, PORT
-print st, ' : Wachten...'
+print st, ': Server Info : Server geladen!'
+print st, ': Server Info : Server IP :', GetMyIP,":", PORT
+print st, ': Wachten...'
 while True:
         tcpCliSock,addr = tcpSerSock.accept()  
         try:
@@ -48,15 +48,15 @@ while True:
                         if data == ctrCmd[0]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
-                                print st, ' : Gaat naar boven'
+                                print st, ': Gaat naar boven'
                                 Piston2.PistonUp()
-                                print st, ' : Wachten...'
+                                print st, ': Wachten...'
                         if data == ctrCmd[1]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
-                                print st, ' : Gaat naar beneden'
+                                print st, ': Gaat naar beneden'
                                 Piston2.PistonDown()
-                                print st, ' : Wachten...'
+                                print st, ': Wachten...'
         except KeyboardInterrupt:
                 Piston2.close()
                 GPIO.cleanup()
