@@ -17,7 +17,6 @@ Piston2.setup()
 ctrCmd = ['Up','Down']
 HOST = ''
 PORT = 21567
-SERVER = socket.gethostbyname(socket.gethostname())
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
 tcpSerSock = socket(AF_INET, SOCK_STREAM)
@@ -60,4 +59,4 @@ while True:
         except KeyboardInterrupt:
                 Piston2.close()
                 GPIO.cleanup()
-tcpSerSock.close();
+tcpSerSock.close()
