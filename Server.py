@@ -1,6 +1,6 @@
 import Piston2
-import socket
-#from socket import *
+#import socket
+from socket import *
 from datetime import datetime
 import datetime
 from time import ctime
