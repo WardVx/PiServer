@@ -35,7 +35,6 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('.     Ward Vandevyvere                  |___/           ')
 print '\n'
-print("\033[1;32;40m Bright Green  \n")
 print st, ' : Server Info : Server geladen!'
 print st, ' : Server Info : Server IP : ', GetMyIP, HOST
 print st, ' : Wachten...'
