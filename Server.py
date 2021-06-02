@@ -32,7 +32,7 @@ print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
 print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
 print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
-print('      WardVx                            |___/           ')
+print('   github.com/WardVx                    |___/           ')
 print '\n'
 print st, ': [SERVER INFO] Server geladen!'
 print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
