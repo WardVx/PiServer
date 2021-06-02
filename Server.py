@@ -34,7 +34,6 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('      WardVx                            |___/           ')
 print '\n'
-print("\033[1;37;40m SERVER INFO\033[0;37;40m \n")
 print st, ': [SERVER INFO] Server geladen!'
 print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
