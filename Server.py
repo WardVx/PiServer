@@ -34,7 +34,7 @@ print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
 print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
 print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
-print('                                        |___/           ')
+print('.     Ward Vandevyvere                  |___/           ')
 print '\n'
 print st, ' : Server geladen!'
 print st, ' : Wachten...'
