@@ -34,7 +34,6 @@ print('                                         __/ |          ')
 print('.     Ward Vandevyvere                  |___/           ')
 print '\n'
 print st, ' : Server Info : Server geladen!'
-print st, ' : Server info : Server IP : ', SERVER, PORT
 print st, ' : Wachten...'
 while True:
         tcpCliSock,addr = tcpSerSock.accept()  
