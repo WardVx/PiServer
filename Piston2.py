@@ -19,5 +19,6 @@ def PistonDown():
   
 def close():
   Piston2.stop
+  
 if __name__ == '__main__':
   setup()
