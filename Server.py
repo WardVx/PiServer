@@ -1,6 +1,5 @@
 import Piston2
 from socket import *
-#import socket
 from datetime import datetime
 import datetime
 from time import ctime
@@ -33,10 +32,10 @@ print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
 print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
 print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
-print('.     Ward Vandevyvere                  |___/           ')
+print('      Ward Vandevyvere                  |___/           ')
 print '\n'
 print st, ' : Server Info : Server geladen!'
-print st, ' : Server Info : Server IP : ', GetMyIP, HOST
+print st, ' : Server Info : Server IP : ', GetMyIP, PORT
 print st, ' : Wachten...'
 while True:
         tcpCliSock,addr = tcpSerSock.accept()  
