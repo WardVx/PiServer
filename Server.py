@@ -3,7 +3,6 @@ from socket import *
 from datetime import datetime
 import datetime
 from time import ctime
-import time
 import RPi.GPIO as GPIO
 import sys
 import commands
@@ -20,9 +19,9 @@ HOST = ''
 PORT = 21567
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
-tcpSerSock = socket(AF_INET, SOCK_STREAM)
-tcpSerSock.bind(ADDR)
-tcpSerSock.listen(5)
+ServerSocket = socket(AF_INET, SOCK_STREAM)
+ServerSocket.bind(ADDR)
+ServerSocket.listen(5)
 
 print '\n'
 print(' ______ _      _       _                       ______ _ ')
@@ -38,7 +37,7 @@ print st, ': [SERVER INFO] Server geladen!'
 print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
 while True:
-        tcpCliSock,addr = tcpSerSock.accept()  
+        tcpCliSock,addr = ServerSocket.accept()  
         try:
                 while True:
                         data = ''
@@ -60,4 +59,4 @@ while True:
         except KeyboardInterrupt:
                 Piston.close()
                 GPIO.cleanup()
-tcpSerSock.close()
+#ServerSocket.close()
