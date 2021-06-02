@@ -1,6 +1,7 @@
 import Piston2
 #import socket
 from socket import *
+import socket
 from datetime import datetime
 import datetime
 from time import ctime
@@ -15,6 +16,7 @@ ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston2.setup()
 ctrCmd = ['Up','Down']
+SERVIP = socket.gethostbyaname(socket.gethostname())
 HOST = ''
 PORT = 21567
 BUFSIZE = 1024
