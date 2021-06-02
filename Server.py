@@ -1,5 +1,4 @@
 import Piston2
-#import socket
 from socket import *
 import socket
 from datetime import datetime
@@ -8,6 +7,7 @@ from time import ctime
 import time
 import RPi.GPIO as GPIO
 import sys
+import commands
 
 GPIO.setwarnings(False) 
 CURSOR_UP_ONE = '\x1b[1A' 
@@ -16,7 +16,7 @@ ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston2.setup()
 ctrCmd = ['Up','Down']
-SERVIP = socket.gethostbyaname(socket.gethostname())
+GetMyIP = commands.getoutput("hostname -I")
 HOST = ''
 PORT = 21567
 BUFSIZE = 1024
@@ -36,6 +36,7 @@ print('                                         __/ |          ')
 print('.     Ward Vandevyvere                  |___/           ')
 print '\n'
 print st, ' : Server Info : Server geladen!'
+print st, ' : Server Info : Server IP : ', GetMyIP, HOST
 print st, ' : Wachten...'
 while True:
         tcpCliSock,addr = tcpSerSock.accept()  
