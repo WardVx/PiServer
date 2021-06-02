@@ -32,10 +32,11 @@ print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
 print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
 print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
-print('      Ward Vandevyvere                  |___/           ')
+print('      WardVx                            |___/           ')
 print '\n'
-print st, ': Server Info : Server geladen!'
-print st, ': Server Info : Server IP :', GetMyIP,":", PORT
+print("\033[1;37;40m SERVER INFO\033[0;37;40m \n")
+print st, ': [SERVER INFO] Server geladen!'
+print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
 while True:
         tcpCliSock,addr = tcpSerSock.accept()  
