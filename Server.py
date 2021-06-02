@@ -20,6 +20,7 @@ ctrCmd = ['Up','Down']
 
 HOST = ''
 PORT = 21567
+SERVER = socket.gethostbyname(socket.gethostname())
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
 
@@ -36,7 +37,8 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('.     Ward Vandevyvere                  |___/           ')
 print '\n'
-print st, ' : Server geladen!'
+print st, ' : Server Info : Server geladen!'
+print st, ' : Server info : Server IP : ', SERVER, PORT
 print st, ' : Wachten...'
 
 while True:
