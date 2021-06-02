@@ -1,4 +1,4 @@
-import Piston2
+import Piston
 from socket import *
 from datetime import datetime
 import datetime
@@ -13,7 +13,7 @@ CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K' 
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-Piston2.setup()
+Piston.setup()
 ctrCmd = ['Up','Down']
 GetMyIP = commands.getoutput("hostname -I")
 HOST = ''
@@ -49,15 +49,15 @@ while True:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ': Gaat naar boven'
-                                Piston2.PistonUp()
+                                Piston.PistonUp()
                                 print st, ': Wachten...'
                         if data == ctrCmd[1]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ': Gaat naar beneden'
-                                Piston2.PistonDown()
+                                Piston.PistonDown()
                                 print st, ': Wachten...'
         except KeyboardInterrupt:
-                Piston2.close()
+                Piston.close()
                 GPIO.cleanup()
 tcpSerSock.close()
