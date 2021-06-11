@@ -50,7 +50,7 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('   github.com/WardVx                    |___/           ')
 print '\n'
-print st
+print '                 ',st
 print '[SERVER INFO]      Server geladen!'
 print '[SERVER INFO]      Server IP :', GetMyIP, PORT
 print '                   Wachten...'
