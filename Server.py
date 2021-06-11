@@ -23,6 +23,7 @@ ADDR = (HOST,PORT)
 ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
+LOGMODE = True
 
 def CloseServer():
         print '\n'
@@ -54,13 +55,16 @@ print st, ':                    Wachten...'
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()
-                print '...connected from :', ADDR
+                if LOGMODE = True:
+                        print st, ': [LOG]              Data ontvangen'
                 try:
                         while True:
                                 data = ''
                                 data = ClientSocket.recv(BUFSIZE)
-                                if not data:                            
-                                       break
+                                if not data:
+                                        print st, ': [LOG]              Geen data ontvangen'
+                                        print st, ': [LOG]              Ontvangen data =', data
+                                        break
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
@@ -73,6 +77,8 @@ def ServerActive():
                                         print st, ':                    Gaat naar beneden'
                                         Piston.PistonDown()
                                         print st, ':                    Wachten...'
+                                if LOGMODE = True:
+                                        print st, ': [LOG]              ', data
                 except KeyboardInterrupt:
                         CloseServer()
 
