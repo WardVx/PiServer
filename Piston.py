@@ -26,7 +26,6 @@ def PistonDown():
         
 def close():
         GPIO.cleanup
-        Piston.stop()
 
 if __name__ == '__main__':
         try:
