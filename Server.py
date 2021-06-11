@@ -29,7 +29,7 @@ def CloseServer():
         time.sleep(1)
         ServerSocket.close()
         print("(INFO) Socket closed")
-        Piston2.close()
+        Piston.close()
         print("(INFO) Piston disconnected")
         GPIO.cleanup()
         print("(INFO) GPIO cleaned up")
