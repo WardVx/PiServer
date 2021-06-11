@@ -25,15 +25,15 @@ ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
 
 def CloseServer():
-        print st, ': [SERVER INFO] Closing...'
+        print st, ': [SERVER INFO]      Closing...'
         time.sleep(1)
         ServerSocket.close()
-        print st, ': [SERVER INFO] Socket closed'
+        print st, ': [SERVER INFO]      Socket closed'
         Piston.close()
-        print st, ': [SERVER INFO] Piston controller closed'
+        print st, ': [SERVER INFO]      Piston controller closed'
         GPIO.cleanup()
-        print st, ': [SERVER INFO] GPIO cleaned'
-        print st, ': [SERVER INFO] Cleanup complete'
+        print st, ': [SERVER INFO]      GPIO cleaned'
+        print st, ': [SERVER INFO]      Cleanup complete'
         exit
 
 print '\n'
@@ -46,9 +46,9 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('   github.com/WardVx                    |___/           ')
 print '\n'
-print st, ': [SERVER INFO] Server geladen!'
-print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
-print st, ': Wachten...'
+print st, ': [SERVER INFO]      Server geladen!'
+print st, ': [SERVER INFO]      Server IP :', GetMyIP, PORT
+print st, ':                    Wachten...'
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()  
@@ -61,15 +61,15 @@ def ServerActive():
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print st, ': Gaat naar boven'
+                                        print st, ':                    Gaat naar boven'
                                         Piston.PistonUp()
-                                        print st, ': Wachten...'
+                                        print st, ':                    Wachten...'
                                 if data == ctrCmd[1]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print st, ': Gaat naar beneden'
+                                        print st, ':                    Gaat naar beneden'
                                         Piston.PistonDown()
-                                        print st, ': Wachten...'
+                                        print st, ':                    Wachten...'
                 except KeyboardInterrupt:
                         CloseServer()
 
