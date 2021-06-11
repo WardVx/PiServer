@@ -60,10 +60,10 @@ def ServerActive():
                                        break
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
-                                       sys.stdout.write(ERASE_LINE) 
-                                       print st, ': Gaat naar boven'
-                                       Piston.PistonUp()
-                                       print st, ': Wachten...'
+                                        sys.stdout.write(ERASE_LINE) 
+                                        print st, ': Gaat naar boven'
+                                        Piston.PistonUp()
+                                        print st, ': Wachten...'
                                 if data == ctrCmd[1]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
