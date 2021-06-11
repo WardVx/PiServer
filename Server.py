@@ -25,6 +25,7 @@ ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
 
 def CloseServer():
+        print '\n'
         print st, ': [SERVER INFO]      Closing...'
         time.sleep(1)
         ServerSocket.close()
@@ -34,6 +35,7 @@ def CloseServer():
         GPIO.cleanup()
         print st, ': [SERVER INFO]      GPIO cleaned'
         print st, ': [SERVER INFO]      Cleanup complete'
+        print '\n'
         exit
 
 print '\n'
