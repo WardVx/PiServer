@@ -79,7 +79,7 @@ def ServerActive():
                                         Piston.PistonDown()
                                         print st, ':                    Wachten...'
                                 if ConsoleLOG == 'True':
-                                        print st, ': [LOG]              ', data
+                                        print st, ': [LOG]             ', data
                 except KeyboardInterrupt:
                         CloseServer()
 
