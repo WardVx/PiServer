@@ -49,25 +49,33 @@ print '\n'
 print st, ': [SERVER INFO] Server geladen!'
 print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
-while True:
+def ServerActive():
+        while True:
         tcpCliSock,addr = ServerSocket.accept()  
+                try:
+                        while True:
+                                data = ''
+                                data = tcpCliSock.recv(BUFSIZE)
+                                if not data:                            
+                                       break
+                                if data == ctrCmd[0]:
+                                        sys.stdout.write(CURSOR_UP_ONE)
+                                       sys.stdout.write(ERASE_LINE) 
+                                       print st, ': Gaat naar boven'
+                                       Piston.PistonUp()
+                                       print st, ': Wachten...'
+                                if data == ctrCmd[1]:
+                                        sys.stdout.write(CURSOR_UP_ONE)
+                                        sys.stdout.write(ERASE_LINE) 
+                                        print st, ': Gaat naar beneden'
+                                        Piston.PistonDown()
+                                        print st, ': Wachten...'
+                except KeyboardInterrupt:
+                        CloseServer()
+
+
+if __name__ == '__main__':
         try:
-                while True:
-                        data = ''
-                        data = tcpCliSock.recv(BUFSIZE)
-                        if not data:                            
-                                break
-                        if data == ctrCmd[0]:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE) 
-                                print st, ': Gaat naar boven'
-                                Piston.PistonUp()
-                                print st, ': Wachten...'
-                        if data == ctrCmd[1]:
-                                sys.stdout.write(CURSOR_UP_ONE)
-                                sys.stdout.write(ERASE_LINE) 
-                                print st, ': Gaat naar beneden'
-                                Piston.PistonDown()
-                                print st, ': Wachten...'
+                ServerActive()
         except KeyboardInterrupt:
                 CloseServer()
