@@ -56,7 +56,7 @@ print st, ':                    Wachten...'
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()
-                if ConsoleLOG = 'True':
+                if ConsoleLOG == 'True':
                         print st, ': [LOG]              Data ontvangen'
                 try:
                         while True:
@@ -78,7 +78,7 @@ def ServerActive():
                                         print st, ':                    Gaat naar beneden'
                                         Piston.PistonDown()
                                         print st, ':                    Wachten...'
-                                if ConsoleLOG = 'True':
+                                if ConsoleLOG == 'True':
                                         print st, ': [LOG]              ', data
                 except KeyboardInterrupt:
                         CloseServer()
