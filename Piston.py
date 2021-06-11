@@ -2,6 +2,8 @@
 import RPi.GPIO as GPIO
 import time
 
+PistonTravelTime = 2
+
 
 def setup():
   GPIO.setmode(GPIO.BCM)
@@ -10,19 +12,17 @@ def setup():
 
 def PistonUp():
   GPIO.output(23,GPIO.HIGH)
-  time.sleep(2)
+  time.sleep(PistonTravelTime)
   GPIO.output(23,GPIO.LOW)
 
 def PistonDown():
-        PistonD.ChangeDutyCycle(10)
-        time.sleep(2)
-        #Piston gaat gedurende 2 seconden omlaag
-        PistonD.ChangeDutyCycle(0)
+  GPIO.output(23,GPIO.HIGH)
+  time.sleep(PistonTravelTime)
+  GPIO.output(23,GPIO.LOW)
         
 def close():
         GPIO.cleanup
         piston.stop()
-        exit
 
 if __name__ == '__main__':
         try:
