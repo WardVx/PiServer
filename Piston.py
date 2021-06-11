@@ -3,22 +3,26 @@ import RPi.GPIO as GPIO
 import time
 
 PistonTravelTime = 2
-
+#Minimum tijd dat de piston moet bewegen
+PinUp = 23
+#Nummer van de pin die OMHOOG doorgeeft
+PinDown = 24
+#Nummer van de pin die OMLAAG aangeeft
 
 def setup():
   GPIO.setmode(GPIO.BCM)
-  GPIO.setup(23,GPIO.LOW)
-  GPIO.setup(24,GPIO.LOW)
+  GPIO.setup(PinUp,GPIO.LOW)
+  GPIO.setup(PinDown,GPIO.LOW)
 
 def PistonUp():
-  GPIO.output(23,GPIO.HIGH)
+  GPIO.output(PinUp,GPIO.HIGH)
   time.sleep(PistonTravelTime)
-  GPIO.output(23,GPIO.LOW)
+  GPIO.output(PinUp,GPIO.LOW)
 
 def PistonDown():
-  GPIO.output(23,GPIO.HIGH)
+  GPIO.output(PinDown,GPIO.HIGH)
   time.sleep(PistonTravelTime)
-  GPIO.output(23,GPIO.LOW)
+  GPIO.output(PinDown,GPIO.LOW)
         
 def close():
         GPIO.cleanup
