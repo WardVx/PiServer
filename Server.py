@@ -28,15 +28,15 @@ ConsoleLOG = 'False'
 
 def CloseServer():
         print '\n'
-        print st, ': [SERVER INFO]      Closing...'
+        print '[SERVER INFO]      Closing...'
         time.sleep(1)
         ServerSocket.close()
-        print st, ': [SERVER INFO]      Socket closed'
+        print '[SERVER INFO]      Socket closed'
         Piston.close()
-        print st, ': [SERVER INFO]      Piston controller closed'
+        print 'SERVER INFO]      Piston controller closed'
         GPIO.cleanup()
-        print st, ': [SERVER INFO]      GPIO cleaned'
-        print st, ': [SERVER INFO]      Cleanup complete'
+        print '[SERVER INFO]      GPIO cleaned'
+        print '[SERVER INFO]      Cleanup complete'
         print '\n'
         exit
 
@@ -50,14 +50,15 @@ print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
 print('   github.com/WardVx                    |___/           ')
 print '\n'
-print st, ': [SERVER INFO]      Server geladen!'
-print st, ': [SERVER INFO]      Server IP :', GetMyIP, PORT
-print st, ':                    Wachten...'
+print st
+print '[SERVER INFO]      Server geladen!'
+print '[SERVER INFO]      Server IP :', GetMyIP, PORT
+print '                   Wachten...'
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()
                 if ConsoleLOG == 'True':
-                        print st, ': [LOG]              Data ontvangen'
+                        print '[LOG]              Data ontvangen'
                 try:
                         while True:
                                 data = ''
@@ -67,17 +68,17 @@ def ServerActive():
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print st, ':                    Gaat naar boven'
+                                        print ':                    Gaat naar boven'
                                         Piston.PistonUp()
-                                        print st, ':                    Wachten...'
+                                        print ':                    Wachten...'
                                 if data == ctrCmd[1]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print st, ':                    Gaat naar beneden'
+                                        print ':                    Gaat naar beneden'
                                         Piston.PistonDown()
                                         print st, ':                    Wachten...'
                                 if ConsoleLOG == 'True':
-                                        print st, ': [LOG]             ', data
+                                        print '[LOG]             ', data
                 except KeyboardInterrupt:
                         CloseServer()
 
