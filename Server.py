@@ -27,7 +27,7 @@ ServerSocket.listen(5)
 def CloseServer():
         print("(INFO) Closing...")
         time.sleep(1)
-        tcpSerSock.close()
+        ServerSocket.close()
         print("(INFO) Socket closed")
         Piston2.close()
         print("(INFO) Piston disconnected")
@@ -51,11 +51,11 @@ print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
 def ServerActive():
         while True:
-                tcpCliSock,addr = ServerSocket.accept()  
+                ClientSocket,addr = ServerSocket.accept()  
                 try:
                         while True:
                                 data = ''
-                                data = tcpCliSock.recv(BUFSIZE)
+                                data = ClientSocket.recv(BUFSIZE)
                                 if not data:                            
                                        break
                                 if data == ctrCmd[0]:
