@@ -24,7 +24,7 @@ ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
 
-def CloseServer()
+def CloseServer():
         Print("(INFO) Closing...")
         time.sleep(1)
         tcpSerSock.close()
