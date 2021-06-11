@@ -63,8 +63,6 @@ def ServerActive():
                                 data = ''
                                 data = ClientSocket.recv(BUFSIZE)
                                 if not data:
-                                        print st, ': [LOG]              Geen data ontvangen'
-                                        print st, ': [LOG]              Ontvangen data =', data
                                         break
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
