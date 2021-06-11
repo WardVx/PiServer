@@ -51,7 +51,7 @@ print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
 def ServerActive():
         while True:
-        tcpCliSock,addr = ServerSocket.accept()  
+                tcpCliSock,addr = ServerSocket.accept()  
                 try:
                         while True:
                                 data = ''
