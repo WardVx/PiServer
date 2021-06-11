@@ -23,7 +23,7 @@ ADDR = (HOST,PORT)
 ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
-ConsoleLOG = 'True'
+ConsoleLOG = 'False'
 #Zet de logs in console aan
 
 def CloseServer():
