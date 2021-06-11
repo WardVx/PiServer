@@ -29,7 +29,6 @@ ConsoleLOG = 'False'
 def CloseServer():
         print '\n'
         print '[SERVER INFO]      Closing...'
-        time.sleep(1)
         ServerSocket.close()
         print '[SERVER INFO]      Socket closed'
         Piston.close()
@@ -53,6 +52,7 @@ print '\n'
 print '                  ',st
 print '[SERVER INFO]      Server geladen!'
 print '[SERVER INFO]      Server IP :', GetMyIP, PORT
+print '\n'
 print '                   Wachten...'
 def ServerActive():
         while True:
