@@ -25,15 +25,15 @@ ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
 
 def CloseServer():
-        Print("(INFO) Closing...")
+        print("(INFO) Closing...")
         time.sleep(1)
         tcpSerSock.close()
-        Print("(INFO) Socket closed")
+        print("(INFO) Socket closed")
         Piston2.close()
-        Print("(INFO) Piston disconnected")
+        print("(INFO) Piston disconnected")
         GPIO.cleanup()
-        Print("(INFO) GPIO cleaned up")
-        Print("(INFO) Cleanup complete")
+        print("(INFO) GPIO cleaned up")
+        print("(INFO) Cleanup complete")
         exit
 
 print '\n'
