@@ -24,6 +24,18 @@ tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
+def CloseServer()
+        Print("(INFO) Closing...")
+        time.sleep(1)
+        tcpSerSock.close()
+        Print("(INFO) Socket closed")
+        Piston2.close()
+        Print("(INFO) Piston disconnected")
+        GPIO.cleanup()
+        Print("(INFO) GPIO cleaned up")
+        Print("(INFO) Cleanup complete")
+        exit
+
 print '\n'
 print(' ______ _      _       _                       ______ _ ')
 print(' |  ___(_)    | |     | |                      | ___ (_)')
@@ -58,6 +70,4 @@ while True:
                                 Piston2.PistonDown()
                                 print st, ': Wachten...'
         except KeyboardInterrupt:
-                Piston2.close()
-                GPIO.cleanup()
-tcpSerSock.close()
+                CloseServer()

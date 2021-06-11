@@ -1,3 +1,4 @@
+
 import RPi.GPIO as GPIO
 import time
 
@@ -28,7 +29,13 @@ def PistonDown():
         #Piston gaat gedurende 2 seconden omlaag
         PistonD.ChangeDutyCycle(0)
         
-def close(): 
-         piston.stop()
+def close():
+        GPIO.cleanup
+        piston.stop()
+        exit
+
 if __name__ == '__main__':
-        setup()
+        try:
+                setup()
+        except KeyboardInterrupt:
+                close()
