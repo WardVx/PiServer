@@ -53,7 +53,8 @@ print st, ': [SERVER INFO]      Server IP :', GetMyIP, PORT
 print st, ':                    Wachten...'
 def ServerActive():
         while True:
-                ClientSocket,addr = ServerSocket.accept()  
+                ClientSocket,addr = ServerSocket.accept()
+                print '...connected from :', ADDR
                 try:
                         while True:
                                 data = ''
