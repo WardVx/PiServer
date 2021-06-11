@@ -26,7 +26,8 @@ ServerSocket.listen(5)
 
 def CloseServer():
         sys.stdout.write(CURSOR_UP_ONE)
-        sys.stdout.write(ERASE_LINE) 
+        sys.stdout.write(ERASE_LINE)
+        sys.stdout.write(BACKSPACE) 
         print("(INFO) Closing...")
         time.sleep(1)
         ServerSocket.close()
