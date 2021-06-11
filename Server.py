@@ -23,7 +23,8 @@ ADDR = (HOST,PORT)
 ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
-LOGMODE = True
+LOGMODE = 'True'
+#Zet de logs in console aan
 
 def CloseServer():
         print '\n'
@@ -55,7 +56,7 @@ print st, ':                    Wachten...'
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()
-                if LOGMODE = True:
+                if LOGMODE = 'True':
                         print st, ': [LOG]              Data ontvangen'
                 try:
                         while True:
@@ -77,7 +78,7 @@ def ServerActive():
                                         print st, ':                    Gaat naar beneden'
                                         Piston.PistonDown()
                                         print st, ':                    Wachten...'
-                                if LOGMODE = True:
+                                if LOGMODE = 'True':
                                         print st, ': [LOG]              ', data
                 except KeyboardInterrupt:
                         CloseServer()
