@@ -33,7 +33,7 @@ def CloseServer():
         ServerSocket.close()
         print '[SERVER INFO]      Socket closed'
         Piston.close()
-        print 'SERVER INFO]      Piston controller closed'
+        print '[SERVER INFO]      Piston controller closed'
         GPIO.cleanup()
         print '[SERVER INFO]      GPIO cleaned'
         print '[SERVER INFO]      Cleanup complete'
