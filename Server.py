@@ -1,4 +1,4 @@
-import Piston2
+import Piston
 from socket import *
 from datetime import datetime
 import datetime
@@ -13,16 +13,16 @@ CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K' 
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-Piston2.setup()
+Piston.setup()
 ctrCmd = ['Up','Down']
 GetMyIP = commands.getoutput("hostname -I")
 HOST = ''
 PORT = 21567
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
-tcpSerSock = socket(AF_INET, SOCK_STREAM)
-tcpSerSock.bind(ADDR)
-tcpSerSock.listen(5)
+ServerSocket = socket(AF_INET, SOCK_STREAM)
+ServerSocket.bind(ADDR)
+ServerSocket.listen(5)
 
 def CloseServer()
         Print("(INFO) Closing...")
@@ -44,13 +44,13 @@ print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
 print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
 print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
 print('                                         __/ |          ')
-print('      Ward Vandevyvere                  |___/           ')
+print('   github.com/WardVx                    |___/           ')
 print '\n'
-print st, ': Server Info : Server geladen!'
-print st, ': Server Info : Server IP :', GetMyIP,":", PORT
+print st, ': [SERVER INFO] Server geladen!'
+print st, ': [SERVER INFO] Server IP :', GetMyIP, PORT
 print st, ': Wachten...'
 while True:
-        tcpCliSock,addr = tcpSerSock.accept()  
+        tcpCliSock,addr = ServerSocket.accept()  
         try:
                 while True:
                         data = ''
@@ -61,13 +61,13 @@ while True:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ': Gaat naar boven'
-                                Piston2.PistonUp()
+                                Piston.PistonUp()
                                 print st, ': Wachten...'
                         if data == ctrCmd[1]:
                                 sys.stdout.write(CURSOR_UP_ONE)
                                 sys.stdout.write(ERASE_LINE) 
                                 print st, ': Gaat naar beneden'
-                                Piston2.PistonDown()
+                                Piston.PistonDown()
                                 print st, ': Wachten...'
         except KeyboardInterrupt:
                 CloseServer()
