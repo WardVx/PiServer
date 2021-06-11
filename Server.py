@@ -76,7 +76,7 @@ def ServerActive():
                                         sys.stdout.write(ERASE_LINE) 
                                         print '                   Gaat naar beneden'
                                         Piston.PistonDown()
-                                        print st, '                   Wachten...'
+                                        print '                   Wachten...'
                                 if ConsoleLOG == 'True':
                                         print '[LOG]             ', data
                 except KeyboardInterrupt:
