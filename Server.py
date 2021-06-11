@@ -68,15 +68,15 @@ def ServerActive():
                                 if data == ctrCmd[0]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print ':                    Gaat naar boven'
+                                        print '                   Gaat naar boven'
                                         Piston.PistonUp()
-                                        print ':                    Wachten...'
+                                        print '                   Wachten...'
                                 if data == ctrCmd[1]:
                                         sys.stdout.write(CURSOR_UP_ONE)
                                         sys.stdout.write(ERASE_LINE) 
-                                        print ':                    Gaat naar beneden'
+                                        print '                   Gaat naar beneden'
                                         Piston.PistonDown()
-                                        print st, ':                    Wachten...'
+                                        print st, '                   Wachten...'
                                 if ConsoleLOG == 'True':
                                         print '[LOG]             ', data
                 except KeyboardInterrupt:
