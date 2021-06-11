@@ -14,8 +14,7 @@ ERASE_LINE = '\x1b[2K'
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 Piston.setup()
-#ctrCmd = ['U','D']
-ctrCmd = ['Up','Down']
+ctrCmd = ['U','D']
 GetMyIP = commands.getoutput("hostname -I")
 HOST = ''
 PORT = 21567
