@@ -20,42 +20,30 @@ Piston.setup()
 ctrCmd = ['U','D']
 GetMyIP = commands.getoutput("hostname -I")
 HOST = ''
-PORT = 21567
+PORT = settings.Port
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
 ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
-ServerSocket.listen(5)
+ServerSocket.listen(1)
 ConsoleLOG = settings.Console_LOG
 
-def CloseServer():
+def ServerSetup():
         print '\n'
-        print '[SERVER INFO]      Closing...'
-        ServerSocket.close()
-        print '[SERVER INFO]      Socket closed'
-        Piston.close()
-        print '[SERVER INFO]      Piston controller closed'
-        GPIO.cleanup()
-        print '[SERVER INFO]      GPIO cleaned'
-        print '[SERVER INFO]      Cleanup complete'
+        print(' ______ _      _       _                       ______ _ ')
+        print(' |  ___(_)    | |     | |                      | ___ (_)')
+        print(' | |_   _  ___| |_ ___| |__  _ __ _   _  __ _  | |_/ /_ ')
+        print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
+        print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
+        print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
+        print('                                         __/ |          ')
+        print('   github.com/WardVx                    |___/           ')
         print '\n'
-        exit
-
-print '\n'
-print(' ______ _      _       _                       ______ _ ')
-print(' |  ___(_)    | |     | |                      | ___ (_)')
-print(' | |_   _  ___| |_ ___| |__  _ __ _   _  __ _  | |_/ /_ ')
-print(' |  _| | |/ _ \ __/ __| `_ \| `__| | | |/ _` | |  __/| |')
-print(' | |   | |  __/ |_\__ \ |_) | |  | |_| | (_| | | |   | |')
-print(' \_|   |_|\___|\__|___/_.__/|_|   \__,_|\__, | \_|   |_|')
-print('                                         __/ |          ')
-print('   github.com/WardVx                    |___/           ')
-print '\n'
-print '                  ',st
-print '[SERVER INFO]      Server geladen!'
-print '[SERVER INFO]      Server IP :', GetMyIP, PORT
-print '\n'
-print '                   Wachten...'
+        print '                  ',st
+        print '[SERVER INFO]      Server geladen!'
+        print '[SERVER INFO]      Server IP :', GetMyIP, PORT
+        print '\n'
+        print '                   Wachten...'
 
 def ServerActive():
         while True:
@@ -85,11 +73,23 @@ def ServerActive():
                 except KeyboardInterrupt:
                         CloseServer()
 
+def CloseServer():
+        print '\n'
+        print '[SERVER INFO]      Closing...'
+        ServerSocket.close()
+        print '[SERVER INFO]      Socket closed'
+        Piston.close()
+        print '[SERVER INFO]      Piston controller closed'
+        GPIO.cleanup()
+        print '[SERVER INFO]      GPIO cleaned'
+        print '[SERVER INFO]      Cleanup complete'
+        print '\n'
+        exit
+
+ServerSetup()
 
 if __name__ == '__main__':
         try:
-                print 'Testing..'
-                print ConsoleLOG
                 ServerActive()
         except KeyboardInterrupt:
                 CloseServer()
