@@ -1,13 +1,11 @@
 
 import RPi.GPIO as GPIO
 import time
+import settings
 
-PistonTravelTime = 2
-#Minimum tijd dat de piston moet bewegen
-PinUp = 23
-#Nummer van de pin die OMHOOG doorgeeft
-PinDown = 24
-#Nummer van de pin die OMLAAG aangeeft
+PistonTravelTime = settings.Piston_Reistijd
+PinUp = settings.Pin_Omhoog
+PinDown = settings.Pin_Omlaag
 
 def setup():
   GPIO.setmode(GPIO.BCM)
@@ -26,6 +24,7 @@ def PistonDown():
         
 def close():
         GPIO.cleanup
+        print('Cleaning up Piston.py')
 
 if __name__ == '__main__':
         try:

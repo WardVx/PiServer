@@ -1,4 +1,7 @@
+#!/usr/bin/python
+
 import Piston
+import settings
 from socket import *
 from datetime import datetime
 import datetime
@@ -23,8 +26,7 @@ ADDR = (HOST,PORT)
 ServerSocket = socket(AF_INET, SOCK_STREAM)
 ServerSocket.bind(ADDR)
 ServerSocket.listen(5)
-ConsoleLOG = 'False'
-#Zet de logs in console aan
+ConsoleLOG = settings.Console_LOG
 
 def CloseServer():
         print '\n'
@@ -54,6 +56,7 @@ print '[SERVER INFO]      Server geladen!'
 print '[SERVER INFO]      Server IP :', GetMyIP, PORT
 print '\n'
 print '                   Wachten...'
+
 def ServerActive():
         while True:
                 ClientSocket,addr = ServerSocket.accept()
@@ -85,6 +88,8 @@ def ServerActive():
 
 if __name__ == '__main__':
         try:
+                print 'Testing..'
+                print ConsoleLOG
                 ServerActive()
         except KeyboardInterrupt:
                 CloseServer()
