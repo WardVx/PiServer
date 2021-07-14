@@ -4,6 +4,7 @@ class Server_Settings
      Port = 21567
 
 class Piston_Settings
+    Pin_Aan = 25
     Pin_Omhoog = 23
     Pin_Omlaag = 24
     # https://www.raspberrypi.org/documentation/usage/gpio/
