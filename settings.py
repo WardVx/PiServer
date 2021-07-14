@@ -1,7 +1,8 @@
 class Server_Settings
     Console_LOG = False
     # Zorgt ervoor dat je kan zien wat de server doet in de console
-     Port = 21567
+    Port = 21567
+    # De internetpoort van de server
 
 class Piston_Settings
     Pin_Aan = 25
