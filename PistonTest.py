@@ -11,6 +11,8 @@ def setup():
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(PinUp,GPIO.LOW)
   GPIO.setup(PinDown,GPIO.LOW)
+  GPIO.setup(PinOn,GPIO.LOW)
+  
 
 def PistonUp():
   GPIO.setup(PinOn,GPIO.HIGH)
