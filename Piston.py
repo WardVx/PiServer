@@ -30,7 +30,7 @@ def PistonDown():
         
 def close():
         GPIO.cleanup
-        print('Cleaning up Piston.py')
+        print('                   Cleaning up Piston.py')
 
 if __name__ == '__main__':
         try:
