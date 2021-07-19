@@ -41,6 +41,7 @@ def ServerSetup():
         print '\n'
         print '                  ',st
         print '[SERVER INFO]      Server geladen!'
+        print '[SERVER INFO]      Druk op CTRL + C om te sluiten'
         print '[SERVER INFO]      Server IP :', GetMyIP, PORT
         print '\n'
         print '                   Wachten...'
