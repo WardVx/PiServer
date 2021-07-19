@@ -38,6 +38,8 @@ try:
       PistonUp()
       PistonDown()
       print("Test geslaagd")
-      GPIO.cleanup()
+      close()
 except KeyboardInterrupt:
     GPIO.cleanup()
+def close():
+  GPIO.cleanup()
