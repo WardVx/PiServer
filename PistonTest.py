@@ -29,13 +29,13 @@ def PistonDown():
 setup()
 try:
     while True:
-    PistonUp()
-    PistonDown()
-    PistonUp()
-    PistonDown()
-    PistonUp()
-    PistonDown()
-    print("Test geslaagd")
-    GPIO.cleanup()
+      PistonUp()
+      PistonDown()
+      PistonUp()
+      PistonDown()
+      PistonUp()
+      PistonDown()
+      print("Test geslaagd")
+      GPIO.cleanup()
 except KeyboardInterrupt:
     GPIO.cleanup()
