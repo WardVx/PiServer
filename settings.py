@@ -1,5 +1,5 @@
 ### Server_Settings
-Console_LOG = False
+Console_LOG = True
 # Zorgt ervoor dat je kan zien wat de server doet in de console
 Port = 21567
 # De internetpoort van de server
