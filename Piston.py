@@ -8,6 +8,7 @@ PinUp = settings.Pin_Omhoog
 PinDown = settings.Pin_Omlaag
 
 def setup():
+  GPIO.cleanup
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(PinUp,GPIO.LOW)
   GPIO.setup(PinDown,GPIO.LOW)
