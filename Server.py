@@ -45,6 +45,7 @@ def ServerSetup():
         print '[SERVER INFO]      Server IP :', GetMyIP, PORT
         print '\n'
         print '                   Wachten...'
+        Piston.setup()
 
 def ServerActive():
         while True:

@@ -5,13 +5,12 @@ import settings
 PistonTravelTime = settings.Piston_Reistijd
 PinUp = settings.Pin_Omhoog
 PinDown = settings.Pin_Omlaag
-PinOn = settings.Pin_Aan
 
 def setup():
+  GPIO.cleanup
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(PinUp,GPIO.LOW)
   GPIO.setup(PinDown,GPIO.LOW)
-  GPIO.setup(PinOn,GPIO.LOW)
   
 
 def PistonUp():
@@ -23,9 +22,7 @@ def PistonUp():
 
 def PistonDown():
   GPIO.output(PinDown,GPIO.HIGH)
-  GPIO.output(PinOn,GPIO.HIGH)
   time.sleep(PistonTravelTime)
-  GPIO.output(PinOn,GPIO.LOW)
   GPIO.output(PinDown,GPIO.LOW)
 
 try:
@@ -40,6 +37,6 @@ try:
       print("Test geslaagd")
       close()
 except KeyboardInterrupt:
-    GPIO.cleanup()
+    close()
 def close():
   GPIO.cleanup()
