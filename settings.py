@@ -9,5 +9,5 @@ Pin_Aan = 25
 Pin_Omhoog = 23
 Pin_Omlaag = 24
 # https://www.raspberrypi.org/documentation/usage/gpio/
-Piston_Reistijd = 2
+Piston_Reistijd = 30
 # Tijd in seconden
