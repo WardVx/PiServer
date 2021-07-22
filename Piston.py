@@ -13,22 +13,20 @@ def setup():
   GPIO.setup(PinOn,GPIO.LOW)
   GPIO.setup(PinUp,GPIO.LOW)
   GPIO.setup(PinDown,GPIO.LOW)
+  GPIO.output(PinOn,GPIO.HIGH)
 
 def PistonUp():
-  GPIO.output(PinOn,GPIO.HIGH)
   GPIO.output(PinUp,GPIO.HIGH)
   time.sleep(PistonTravelTime)
-  GPIO.output(PinOn,GPIO.LOW)
   GPIO.output(PinUp,GPIO.LOW)
 
 def PistonDown():
-  GPIO.output(PinOn,GPIO.HIGH)
   GPIO.output(PinDown,GPIO.HIGH)
   time.sleep(PistonTravelTime)
   GPIO.output(PinDown,GPIO.LOW)
-  GPIO.output(PinOn,GPIO.LOW)
         
 def close():
+        GPIO.output(PinOn,GPIO.LOW)
         GPIO.cleanup
         print('[SERVER INFO]      Cleaning up Piston.py')
 
