@@ -4,16 +4,13 @@ import time
 import settings
 
 PistonTravelTime = settings.Piston_Reistijd
-PinOn = settings.Pin_Aan
 PinUp = settings.Pin_Omhoog
 PinDown = settings.Pin_Omlaag
 
 def setup():
   GPIO.setmode(GPIO.BCM)
-  GPIO.setup(PinOn,GPIO.LOW)
   GPIO.setup(PinUp,GPIO.LOW)
   GPIO.setup(PinDown,GPIO.LOW)
-  GPIO.output(PinOn,GPIO.HIGH)
 
 def PistonUp():
   GPIO.output(PinUp,GPIO.HIGH)
@@ -26,7 +23,6 @@ def PistonDown():
   GPIO.output(PinDown,GPIO.LOW)
         
 def close():
-        GPIO.output(PinOn,GPIO.LOW)
         GPIO.cleanup
         print('[SERVER INFO]      Cleaning up Piston.py')
 
